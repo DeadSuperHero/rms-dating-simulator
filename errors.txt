@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 58: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    menu:
-    ^
+File "game/script.rpy", line 72: expected ':' not found.
+    label fsLoop
+                ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
