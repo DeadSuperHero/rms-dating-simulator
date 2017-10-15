@@ -7,6 +7,18 @@ Newgrounds.com community.
 Core story loop is under development. Milestones for features and plot elements
 are currently being explored.
 
+
+## How to run the game
+Since it is early development, no binaries or packages are being provided.
+Instead, you will need to actually install Ren'Py and git clone this repo into
+your Ren'Py Projects Directory.
+
+You can specify this location in your Ren'Py settings;
+for convenience mine is `/home/Sean/Workspace/Python/`. Any directory present
+in that folder would see the new Ren'Py game you've added to it.
+
+
+
 ## FAQ
 ### Why Richard Stallman?
 Why not? RMS is a quirky person, who also deserves to be loved. This game
@@ -20,3 +32,6 @@ Probably not. The real issue, I believe, is that I have no idea on how to make
 instructions for playing this in Emacs.
 ### Can I get involved with this somehow?
 Sure! Just open up a Pull Request.
+### Will you provide binaries or packages in the future?
+Possibly, but it isn't yet a high priority. If this hits a level of polish
+that demands a wider audience of people plays it, then I'll put something together.
