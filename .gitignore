@@ -1,0 +1,4 @@
+/game/save/*
+errors.txt
+log.txt
+traceback.txt
