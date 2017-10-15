@@ -77,9 +77,11 @@ label fsLoop:
             show rms neutral
             rms "I founded GNU in 1983 as a means to protect the development of Free Software."
             rms "GNU is a recursive acronym, which stands for GNU is Not Unix."
+            jump fsLoop
         "Privacy":
             show rms neutral
             rms "Privacy is important."
+            jump fsLoop
     # This ends the game.
 
     return
