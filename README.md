@@ -10,7 +10,7 @@ are currently being explored.
 ## FAQ
 ### Why Richard Stallman?
 Why not? RMS is a quirky person, who also deserves to be loved. This game
-exists as a byproduct of Rule 42, in the context that if something online can be
+exists as a byproduct of Rule 34, in the context that if something online can be
 imagined, it can exist.
 ### Is this game Free software?
 Yes, the engine is LGPL, and the visual novel itself is GPLv3. All art assets are
