@@ -81,7 +81,7 @@ label fsLoop:
         "Privacy":
             show rms neutral
             rms "Privacy is important."
-            rms "This is a test."
+            rms "This is a test2."
             jump fsLoop
     # This ends the game.
 
