@@ -4,6 +4,7 @@
 # name of the character.
 
 define rms = Character("Richard Stallman")
+define w = Character("Waiter")
 
 
 # The game starts here.
@@ -15,20 +16,39 @@ label start:
     # images directory to show it.
 
     scene bg room
+    with fade
+    
+    "It's fall, and you've just moved into the Boston area for school."
+    "Through an unexpected set of circumstances, you are on a date with Richard Stallman."
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    show rms happy
+    show rms neutral
 
     # These display lines of dialogue.
 
-    "You find yourself in front of GNU's greatest leader, your personal weakness, Richard Stallman."
-
-    rms "I hope you're running Free Software!"
-
-    rms "Once you add a story, pictures, and music, you can release it to the world!"
+    "You're not quite sure how this all happened, "
+    
+    show w impatient
+    w "Bonjour, monsieur. What will you two be ordering here tonight?"
+    
+    rms "What shall we eat? I'm famished."
+    
+    menu:
+        "Steak":
+            show rms happy
+            "You tell the waiter that you want to eat medium-rare steak."
+            rms "I've been trying to watch my diet recently, but steak sounds wonderful!"
+            w "Very well, your steak will be out shortly!"
+        "Fish":
+           "You tell Richard that actually, you're in the mood for grilled swordfish."
+           rms "Excellent decision; I too have been watching my weight recently."
+           w "Very well, your swordfish will be out shortly!"
+        "Salad":
+            show rms unhappy
+            "You loudly insist that the both of you must eat Kale Salad."
+            rms "It's been a while since I've enjoyed a kale salad, but okay!"
+            "The waiter sneers at you for having such disgusting taste."
+            w "You may as well eat toe cheese. Your kale will be out shortly!"
+        
 
     # This ends the game.
 
