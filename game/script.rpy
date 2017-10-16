@@ -9,6 +9,18 @@ image rms neutral = "stallman.jpg"
 
 # The game starts here.
 
+label splashscreen:
+    scene black
+    with Pause(1)
+
+    show text "{size=+10} This program is {b}Free Software{/b}, \n and licensed under the{/size} \n {size=+20}GNU GPL v3.{/size}"
+    with Pause(2)
+
+    hide text with dissolve
+    with Pause(1)
+
+    return
+
 label start:
 
     # Show a background. This uses a placeholder by default, but you can
