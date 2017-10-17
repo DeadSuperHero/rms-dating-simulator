@@ -1,6 +1,7 @@
 init:
     $ timer_range = 0
     $ timer_jump = 0
+    $ points = 0
 
 label dinner_date:
     scene restaraunt
@@ -15,75 +16,118 @@ label dinner_date:
 
     rms "What shall we eat? I'm famished."
 
-    $ time = 5
-    $ timer_range = 5
+    $ time = 1
+    $ timer_range = 1
     $ timer_jump = 'toe_cheese'
     show screen countdown
     menu:
         "Steak":
             hide screen countdown
-            $ dinner = 1
+            $ dinner = "steak"
             show rms neutral
             "You tell the waiter that you want to eat medium-rare steak."
             rms "I've been trying to watch my diet recently, but steak sounds wonderful!"
             w "Very well, your steak will be out shortly!"
             hide w
-            jump questionLoop
+            jump dinnerTransition
         "Fish":
             hide screen countdown
-            $ dinner = 2
+            $ dinner = "swordfish"
             "You tell Richard that actually, you're in the mood for grilled swordfish."
             rms "Excellent decision; I too have been watching my weight recently."
             w "Very well, your swordfish will be out shortly!"
             hide w
-            jump questionLoop
+            jump dinnerTransition
         "Salad":
             hide screen countdown
-            $ dinner = 3
+            $ dinner = "kale"
             show rms neutral
             "You loudly insist that the both of you must eat Kale Salad."
             rms "It's been a while since I've enjoyed a kale salad, but okay!"
             "The waiter sneers at you for having such disgusting taste."
             w "You may as well eat toe cheese. Your kale will be out shortly!"
             hide w
-            jump questionLoop
+            jump dinnerTransition
 
 label toe_cheese:
-    $ dinner = 4
+    $ dinner = "toe_cheese"
     hide screen countdown
     show rms neutral
     rms "Well, I guess we shall have to eat toe cheese!"
     "The waiter looks mildly uncomfortable."
     w "Two large helpings of Toe Cheese, coming right up!"
     hide w
-    jump questionLoop
+    jump dinnerTransition
 
+
+label dinnerTransition:
+    rms "What shall we talk about?"
+    jump questionLoop
 
 
 label questionLoop:
     show rms neutral
-    rms "What shall we talk about?"
-    menu:
-        "Politics":
-            show rms neutral
-            rms "Not my favorite subject."
-            jump questionLoop
-        "Free Software":
-            show rms neutral
-            jump fsLoop
+    if points > 3:
+        jump foodLoop
+    else:
+        menu:
+            "Politics":
+                show rms neutral
+                rms "Not my favorite subject."
+                jump politicsLoop
+            "Free Software":
+                show rms neutral
+                rms "My favorite subject!"
+                jump fsLoop
 
 
 label fsLoop:
-    show rms neutral
-    rms "My favorite subject!"
+        menu:
+            "History of Free Software":
+                $ points +=1
+                show rms neutral
+                rms "I founded GNU in 1983 as a means to protect the development of Free Software."
+                rms "GNU is a recursive acronym, which stands for GNU is Not Unix."
+                jump questionLoop
+            "Privacy":
+                $ points +=1
+                show rms neutral
+                rms "People have the right to privacy."
+                rms "The problem with proprietary software is that those systems inherently prevent you from looking inside of them."
+                rms ""
+                jump questionLoop
+            "GNU":
+                $ points +=1
+                show rms neutral
+                rms "GNU is my child project, and I am very proud of what it has become."
+                rms "It is a completely free operating system."
+                jump questionLoop
+            "Open Source":
+                $ points +=1
+                show rms neutral
+                rms "Don't get me started."
+                jump questionLoop
+
+label politicsLoop:
     menu:
-        "GNU":
+        "Liberals":
+            $ points +=1
             show rms neutral
-            rms "I founded GNU in 1983 as a means to protect the development of Free Software."
-            rms "GNU is a recursive acronym, which stands for GNU is Not Unix."
-            jump fsLoop
-        "Privacy":
+            rms "Something about liberal politics."
+            jump questionLoop
+        "Donald Trump":
+            $ points +=1
             show rms neutral
-            rms "Privacy is important."
-            rms "This is a test2."
-            jump fsLoop
+            rms "He's pretty greedy."
+            jump questionLoop
+        "Gun Control":
+            $ points +=1
+            show rms neutral
+            rms "Guns are out there."
+            jump questionLoop
+
+
+label foodLoop:
+    show w
+    rms "Oh boy, the food is here!"
+    "You ordered [dinner]! Eat up!"
