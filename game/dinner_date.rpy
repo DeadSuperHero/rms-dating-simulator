@@ -22,6 +22,7 @@ label dinner_date:
     menu:
         "Steak":
             hide screen countdown
+            $ dinner = 1
             show rms neutral
             "You tell the waiter that you want to eat medium-rare steak."
             rms "I've been trying to watch my diet recently, but steak sounds wonderful!"
@@ -30,6 +31,7 @@ label dinner_date:
             jump questionLoop
         "Fish":
             hide screen countdown
+            $ dinner = 2
             "You tell Richard that actually, you're in the mood for grilled swordfish."
             rms "Excellent decision; I too have been watching my weight recently."
             w "Very well, your swordfish will be out shortly!"
@@ -37,6 +39,7 @@ label dinner_date:
             jump questionLoop
         "Salad":
             hide screen countdown
+            $ dinner = 3
             show rms neutral
             "You loudly insist that the both of you must eat Kale Salad."
             rms "It's been a while since I've enjoyed a kale salad, but okay!"
@@ -46,6 +49,7 @@ label dinner_date:
             jump questionLoop
 
 label toe_cheese:
+    $ dinner = 4
     hide screen countdown
     show rms neutral
     rms "Well, I guess we shall have to eat toe cheese!"
