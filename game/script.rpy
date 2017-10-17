@@ -6,6 +6,8 @@
 define rms = Character("Richard Stallman")
 define w = Character("Waiter")
 image rms neutral = "stallman.jpg"
+image boston_plaza = "boston_plaza.jpg"
+
 
 # The game starts here.
 
@@ -27,7 +29,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    scene boston_plaza
     with fade
 
     "It's fall, and you've just moved into the Boston area for school."
