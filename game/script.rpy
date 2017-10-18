@@ -24,18 +24,8 @@ label splashscreen:
     return
 
 label start:
-
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
-    scene boston_plaza
-    with fade
-
-    "It's fall, and you've just moved into the Boston area for school."
-    "Through an unexpected set of circumstances, you are on a date with Richard Stallman."
-
-    jump dinner_date
+    # For now, just jump into the Strange Dream loop.
+    jump strangeDream
     # This ends the game.
 
     return
